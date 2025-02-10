@@ -1,0 +1,55 @@
+.wrapper {
+    width: 100%;
+    padding: 60px 0;
+    background: #111;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .genreContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .genreCard {
+    width: 250px;
+    text-align: center;
+  }
+  
+  .genreImage {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .genreTitle {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .genreDescription {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+  }
+  
+  .listenButton {
+    margin-top: 20px;
+    border: 2px solid white;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .listenButton:hover {
+    background: white;
+    color: black;
+  }
+  

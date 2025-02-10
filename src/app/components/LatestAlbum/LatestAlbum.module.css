@@ -1,0 +1,72 @@
+.wrapper {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #d73756;
+  display: flex;
+  justify-content: center;
+}
+
+.albumCard {
+  width: 80%;
+  max-width: 900px;
+  background-color: transparent;
+  border: none;
+}
+
+.albumInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.albumImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.albumTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+.albumDescription {
+  color: white;
+  font-size: 16px;
+}
+
+.musicPlayer {
+  margin-top: 16px;
+  background-color: black;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.playButton {
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+  color: white;
+  font-size: 14px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

@@ -1,0 +1,92 @@
+.wrapper {
+    width: 100%;
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .showList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .showCard {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    gap: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dateBox {
+    background: #d73756;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    min-width: 60px;
+  }
+  
+  .date {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .month {
+    font-size: 14px;
+  }
+  
+  .showImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .showInfo {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .showTitle {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .showDesc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .showDetails {
+    display: flex;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .ticketButton {
+    border: 2px solid white;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .ticketButton:hover {
+    background: white;
+    color: black;
+  }
+  

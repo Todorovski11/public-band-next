@@ -1,0 +1,53 @@
+.wrapper {
+    width: 100%;
+    padding: 60px 0;
+    background: #111;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .teamContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .teamCard {
+    position: relative;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: black;
+  }
+  
+  .teamImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .teamInfo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #d73756;
+    color: white;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .role {
+    font-size: 14px;
+  }
+  
