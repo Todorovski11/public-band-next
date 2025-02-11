@@ -1,12 +1,13 @@
 import { Button, Card, Image, Text, Group } from '@mantine/core';
 import { IconMapPin, IconCalendar, IconClock } from '@tabler/icons-react';
 import classes from './UpcomingShows.module.css';
+import heroImage from '../../../../../public-band-next/public/assets/heroImage.jpg'
 
 const shows = [
-  { date: '19', month: 'Jan', img: 'show1.jpg' },
-  { date: '09', month: 'Feb', img: 'show2.jpg' },
-  { date: '10', month: 'Mar', img: 'show3.jpg' },
-  { date: '19', month: 'Apr', img: 'show4.jpg' },
+  { date: '19', month: 'Jan', img: 'heroImage.jpg' },
+  { date: '09', month: 'Feb', img: 'heroImage.jpg' },
+  { date: '10', month: 'Mar', img: 'heroImage.jpg' },
+  { date: '19', month: 'Apr', img: 'heroImage.jpg' },
 ];
 
 export function UpcomingShows() {
@@ -29,7 +30,6 @@ export function UpcomingShows() {
                 <Text><IconClock size={16} /> 11:45 PM</Text>
               </Group>
             </div>
-            <Button variant="outline" className={classes.ticketButton}>Buy Tickets</Button>
           </Card>
         ))}
       </div>
