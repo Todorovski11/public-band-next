@@ -58,8 +58,8 @@ const UpcomingShows = () => {
                 <Image
                   src={event.image}
                   alt={event.title}
-                  width={80}
-                  height={60}
+                  width={100} /* ✅ Bigger image */
+                  height={80}
                   className={styles.eventImage}
                 />
               </div>

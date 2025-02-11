@@ -1,21 +1,26 @@
-/* Background Image */
+/* Background Image - Make it Cover Full Section */
 .background {
   background-image: url("/assets/heroImage.jpg"); /* ✅ Correct path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* ✅ Ensures the background matches the section height */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 50px 0;
+  position: relative; /* ✅ Ensures proper stacking */
 }
 
-/* Dark Overlay for Better Readability */
+/* Dark Overlay - Matches the Background Exactly */
 .overlay {
-  background: rgba(0, 0, 0, 0.6); /* ✅ Keeps text readable */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* ✅ Matches parent height */
+  background: rgba(0, 0, 0, 0.6); /* ✅ Keeps text readable */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,37 +32,49 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 100%;
-  padding: 20px;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 30px;
+  position: relative; /* ✅ Keeps it above overlay */
+  z-index: 2;
 }
 
-/* Event Card */
+/* Event Card - Now Bigger */
 .eventCard {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1000px;
   background: rgba(255, 255, 255, 0.9); /* ✅ Slight transparency */
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
 
 .eventCard:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* Date & Image */
+/* Ensure all images inside event cards are the same size */
+.eventImage {
+  width: 120px; /* ✅ Make images consistent */
+  height: 100px;
+  border-radius: 0px;
+  object-fit: cover; /* ✅ Ensures no distortion */
+  padding-left: 10px;
+}
+
+/* Ensure Consistent Layout */
 .dateImageContainer {
   display: flex;
   align-items: center;
   background-color: #e63946;
   color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 12px 16px;
+  border-radius: 8px;
 }
 
 .date {
@@ -69,34 +86,27 @@
 }
 
 .date span:first-child {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .date span:last-child {
-  font-size: 14px;
-}
-
-.eventImage {
-  margin-left: 12px;
-  border-radius: 6px;
-  width: 80px;
-  height: 60px;
+  font-size: 16px;
 }
 
 /* Event Details */
 .details {
   flex-grow: 1;
-  margin-left: 16px;
+  margin-left: 20px;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .description {
-  font-size: 14px;
-  color: #555;
+  font-size: 16px;
+  color: #444;
 }
 
 /* Location & Time */
@@ -104,10 +114,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-size: 14px;
-  color: #555;
+  font-size: 16px;
+  color: #444;
 }
 
 .icon {
-  margin-right: 6px;
+  margin-right: 8px;
 }
