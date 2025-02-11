@@ -1,92 +1,113 @@
-.wrapper {
-    width: 100%;
-    padding: 60px 0;
-    background: rgba(0, 0, 0, 0.85);
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 32px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .showList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .showCard {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    max-width: 900px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 16px;
-    gap: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .dateBox {
-    background: #d73756;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 8px;
-    min-width: 60px;
-  }
-  
-  .date {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .month {
-    font-size: 14px;
-  }
-  
-  .showImage {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-  
-  .showInfo {
-    flex-grow: 1;
-    text-align: left;
-  }
-  
-  .showTitle {
-    font-size: 18px;
-    color: white;
-  }
-  
-  .showDesc {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .showDetails {
-    display: flex;
-    gap: 12px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    margin-top: 8px;
-  }
-  
-  .ticketButton {
-    border: 2px solid white;
-    color: white;
-    transition: 0.3s;
-  }
-  
-  .ticketButton:hover {
-    background: white;
-    color: black;
-  }
-  
+/* Background Image */
+.background {
+  background-image: url("/assets/heroImage.jpg"); /* ✅ Correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+/* Dark Overlay for Better Readability */
+.overlay {
+  background: rgba(0, 0, 0, 0.6); /* ✅ Keeps text readable */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Event Card */
+.eventCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.9); /* ✅ Slight transparency */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.eventCard:hover {
+  transform: scale(1.02);
+}
+
+/* Date & Image */
+.dateImageContainer {
+  display: flex;
+  align-items: center;
+  background-color: #e63946;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.date span:first-child {
+  font-size: 24px;
+}
+
+.date span:last-child {
+  font-size: 14px;
+}
+
+.eventImage {
+  margin-left: 12px;
+  border-radius: 6px;
+  width: 80px;
+  height: 60px;
+}
+
+/* Event Details */
+.details {
+  flex-grow: 1;
+  margin-left: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Location & Time */
+.locationTime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+  color: #555;
+}
+
+.icon {
+  margin-right: 6px;
+}

@@ -6,11 +6,9 @@ import Image from "next/image";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export function cn(...inputs) {
-  return twMerge(clsx(inputs));
-}
+const cn = (...inputs) => twMerge(clsx(inputs));
 
-export const ParallaxScroll = ({ images, className }) => {
+const ParallaxScroll = ({ images, className }) => {
   const gridRef = useRef(null);
   const { scrollYProgress } = useScroll({
     container: gridRef,
@@ -31,22 +29,43 @@ export const ParallaxScroll = ({ images, className }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-12 py-60 px-12">
         <div className="grid gap-12">
           {firstPart.map((el, idx) => (
-            <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
-              <Image src={el} className="h-96 w-full object-cover rounded-xl" height="500" width="500" alt="thumbnail" />
+            <motion.div style={{ y: translateFirst }} key={`grid-1-${idx}`}>
+              <Image
+                src={el}
+                className="h-96 w-full object-cover rounded-xl"
+                height={500}
+                width={500}
+                alt="gallery image"
+                priority
+              />
             </motion.div>
           ))}
         </div>
         <div className="grid gap-12">
           {secondPart.map((el, idx) => (
-            <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-              <Image src={el} className="h-96 w-full object-cover rounded-xl" height="500" width="500" alt="thumbnail" />
+            <motion.div style={{ y: translateSecond }} key={`grid-2-${idx}`}>
+              <Image
+                src={el}
+                className="h-96 w-full object-cover rounded-xl"
+                height={500}
+                width={500}
+                alt="gallery image"
+                priority
+              />
             </motion.div>
           ))}
         </div>
         <div className="grid gap-12">
           {thirdPart.map((el, idx) => (
-            <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <Image src={el} className="h-96 w-full object-cover rounded-xl" height="500" width="500" alt="thumbnail" />
+            <motion.div style={{ y: translateThird }} key={`grid-3-${idx}`}>
+              <Image
+                src={el}
+                className="h-96 w-full object-cover rounded-xl"
+                height={500}
+                width={500}
+                alt="gallery image"
+                priority
+              />
             </motion.div>
           ))}
         </div>
@@ -54,3 +73,5 @@ export const ParallaxScroll = ({ images, className }) => {
     </div>
   );
 };
+
+export default ParallaxScroll;

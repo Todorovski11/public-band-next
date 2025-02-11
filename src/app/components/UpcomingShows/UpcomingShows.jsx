@@ -1,38 +1,92 @@
-import { Button, Card, Image, Text, Group } from '@mantine/core';
-import { IconMapPin, IconCalendar, IconClock } from '@tabler/icons-react';
-import classes from './UpcomingShows.module.css';
-import heroImage from '../../../../../public-band-next/public/assets/heroImage.jpg'
+"use client";
+import Image from "next/image";
+import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
+import styles from "./UpcomingShows.module.css";
 
-const shows = [
-  { date: '19', month: 'Jan', img: 'heroImage.jpg' },
-  { date: '09', month: 'Feb', img: 'heroImage.jpg' },
-  { date: '10', month: 'Mar', img: 'heroImage.jpg' },
-  { date: '19', month: 'Apr', img: 'heroImage.jpg' },
+const events = [
+  {
+    date: "09",
+    month: "Feb",
+    title: "Live Show",
+    description: "Live show and albums signing",
+    location: "Los Angeles, USA",
+    time: "11:45 PM",
+    image: "/assets/heroImage.jpg",
+  },
+  {
+    date: "15",
+    month: "Mar",
+    title: "Rock Night",
+    description: "A night full of rock and roll",
+    location: "New York, USA",
+    time: "09:30 PM",
+    image: "/assets/heroImage.jpg",
+  },
+  {
+    date: "22",
+    month: "Apr",
+    title: "Jazz Evening",
+    description: "Smooth jazz and blues night",
+    location: "Chicago, USA",
+    time: "08:00 PM",
+    image: "/assets/heroImage.jpg",
+  },
+  {
+    date: "30",
+    month: "May",
+    title: "EDM Party",
+    description: "Biggest electronic dance event",
+    location: "Miami, USA",
+    time: "10:30 PM",
+    image: "/assets/heroImage.jpg",
+  },
 ];
 
-export function UpcomingShows() {
+const UpcomingShows = () => {
   return (
-    <div className={classes.wrapper}>
-      <h2 className={classes.title}>Upcoming Shows</h2>
-      <div className={classes.showList}>
-        {shows.map((show, index) => (
-          <Card key={index} className={classes.showCard} shadow="sm" radius="md">
-            <div className={classes.dateBox}>
-              <Text className={classes.date}>{show.date}</Text>
-              <Text className={classes.month}>{show.month}</Text>
+    <div className={styles.background}>
+      <div className={styles.overlay}>
+        <div className={styles.container}>
+          {events.map((event, index) => (
+            <div key={index} className={styles.eventCard}>
+              {/* Left Side: Date & Image */}
+              <div className={styles.dateImageContainer}>
+                <div className={styles.date}>
+                  <span>{event.date}</span>
+                  <span>{event.month}</span>
+                </div>
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  width={80}
+                  height={60}
+                  className={styles.eventImage}
+                />
+              </div>
+
+              {/* Event Details */}
+              <div className={styles.details}>
+                <h2 className={styles.title}>{event.title}</h2>
+                <p className={styles.description}>{event.description}</p>
+              </div>
+
+              {/* Location & Time */}
+              <div className={styles.locationTime}>
+                <div className="flex items-center">
+                  <FaMapMarkerAlt className={styles.icon} />
+                  <span>{event.location}</span>
+                </div>
+                <div className="flex items-center mt-2">
+                  <FaCalendarAlt className={styles.icon} />
+                  <span>{event.time}</span>
+                </div>
+              </div>
             </div>
-            <Image src={`../../assets/${show.img}`} alt="Show" className={classes.showImage} />
-            <div className={classes.showInfo}>
-              <Text className={classes.showTitle}><strong>Amazing Live Show</strong></Text>
-              <Text className={classes.showDesc}>Live show and albums signing</Text>
-              <Group className={classes.showDetails}>
-                <Text><IconMapPin size={16} /> Los Angeles, USA</Text>
-                <Text><IconClock size={16} /> 11:45 PM</Text>
-              </Group>
-            </div>
-          </Card>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default UpcomingShows;

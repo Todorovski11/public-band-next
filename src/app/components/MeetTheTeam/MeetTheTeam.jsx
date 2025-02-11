@@ -1,11 +1,12 @@
-import classes from './MeetTheTeam.module.css';
+"use client";
+import classes from "./MeetTheTeam.module.css";
 
-export function MeetTheTeam() {
+const MeetTheTeam = () => {
   const teamMembers = [
-    { name: 'Mathew Hyatt', role: 'Vocal, guitar' },
-    { name: 'Jessika Turcotte', role: 'Vocal, piano' },
-    { name: 'Toby Halvorson', role: 'Bass guitar' },
-    { name: 'Anna Mayer', role: 'Drums' },
+    { name: "Mathew Hyatt", role: "Vocal, guitar" },
+    { name: "Jessika Turcotte", role: "Vocal, piano" },
+    { name: "Toby Halvorson", role: "Bass guitar" },
+    { name: "Anna Mayer", role: "Drums" },
   ];
 
   return (
@@ -24,4 +25,6 @@ export function MeetTheTeam() {
       </div>
     </div>
   );
-}
+};
+
+export default MeetTheTeam;

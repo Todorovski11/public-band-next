@@ -1,16 +1,16 @@
-import { Text } from '@mantine/core';
-import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube, IconBrandTwitter } from '@tabler/icons-react';
-import classes from './FooterSection.module.css';
+"use client";
+import { Text } from "@mantine/core";
+import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube, IconBrandTwitter } from "@tabler/icons-react";
+import classes from "./FooterSection.module.css";
 
-export function FooterSection() {
+const FooterSection = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
         <div className={classes.about}>
           <h3>About the Ecstasy</h3>
           <Text className={classes.description}>
-            Nunc tempus est a dolor cursus pharetra. Donec a massa orci. Nullam eget ante id 
-            diam blandit accumsan. Quisque luctus dui ultrices ante volutpat, nec tincidunt elit varius.
+            Nunc tempus est a dolor cursus pharetra. Donec a massa orci. Nullam eget ante id diam blandit accumsan.
           </Text>
           <div className={classes.socials}>
             <IconBrandFacebook size={24} />
@@ -56,4 +56,6 @@ export function FooterSection() {
       </Text>
     </footer>
   );
-}
+};
+
+export default FooterSection;

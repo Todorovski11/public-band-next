@@ -1,8 +1,9 @@
-import { Card, Text, Image, Group, Button } from '@mantine/core';
-import { IconThumbUp, IconHeadphones, IconShare } from '@tabler/icons-react';
-import classes from './LatestAlbum.module.css';
+"use client";
+import { Card, Text, Image, Group, Button } from "@mantine/core";
+import { IconThumbUp, IconHeadphones, IconShare } from "@tabler/icons-react";
+import classes from "./LatestAlbum.module.css";
 
-export function LatestAlbum() {
+const LatestAlbum = () => {
   return (
     <div className={classes.wrapper}>
       <Card className={classes.albumCard} shadow="sm" radius="md">
@@ -12,9 +13,7 @@ export function LatestAlbum() {
             <Text className={classes.albumTitle}>
               <strong>Latest</strong> Album
             </Text>
-            <Text className={classes.albumDescription}>
-              Lorem ipsum dolor sit amet
-            </Text>
+            <Text className={classes.albumDescription}>Lorem ipsum dolor sit amet</Text>
           </div>
         </div>
 
@@ -25,11 +24,19 @@ export function LatestAlbum() {
         </div>
 
         <Group className={classes.stats}>
-          <Text className={classes.statItem}><IconThumbUp size={16} /> 32,870</Text>
-          <Text className={classes.statItem}><IconHeadphones size={16} /> 45,350</Text>
-          <Text className={classes.statItem}><IconShare size={16} /> 20,530</Text>
+          <Text className={classes.statItem}>
+            <IconThumbUp size={16} /> 32,870
+          </Text>
+          <Text className={classes.statItem}>
+            <IconHeadphones size={16} /> 45,350
+          </Text>
+          <Text className={classes.statItem}>
+            <IconShare size={16} /> 20,530
+          </Text>
         </Group>
       </Card>
     </div>
   );
-}
+};
+
+export default LatestAlbum;
