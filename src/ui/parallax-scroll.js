@@ -27,26 +27,47 @@ export const ParallaxScroll = ({ images, className }) => {
   const thirdPart = images.slice(2 * third);
 
   return (
-    <div className={cn("h-[50rem] items-start overflow-y-auto w-full", className)} ref={gridRef}>
+    <div
+      className={cn("h-[50rem] items-start overflow-y-auto w-full", className)}
+      ref={gridRef}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-12 py-60 px-12">
         <div className="grid gap-12">
           {firstPart.map((el, idx) => (
             <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
-              <Image src={el} className="h-96 w-full object-cover rounded-xl" height="500" width="500" alt="thumbnail" />
+              <Image
+                src={el}
+                className="h-96 w-full object-cover rounded-xl"
+                height="500"
+                width="500"
+                alt="thumbnail"
+              />
             </motion.div>
           ))}
         </div>
         <div className="grid gap-12">
           {secondPart.map((el, idx) => (
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-              <Image src={el} className="h-96 w-full object-cover rounded-xl" height="500" width="500" alt="thumbnail" />
+              <Image
+                src={el}
+                className="h-96 w-full object-cover rounded-xl"
+                height="500"
+                width="500"
+                alt="thumbnail"
+              />
             </motion.div>
           ))}
         </div>
         <div className="grid gap-12">
           {thirdPart.map((el, idx) => (
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <Image src={el} className="h-96 w-full object-cover rounded-xl" height="500" width="500" alt="thumbnail" />
+              <Image
+                src={el}
+                className="h-96 w-full object-cover rounded-xl"
+                height="500"
+                width="500"
+                alt="thumbnail"
+              />
             </motion.div>
           ))}
         </div>
