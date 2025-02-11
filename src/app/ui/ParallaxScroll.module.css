@@ -1,0 +1,9 @@
+.parallaxContainer {
+    width: 100%;
+    background-color: #e63946; /* ✅ Matches UpcomingShows */
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

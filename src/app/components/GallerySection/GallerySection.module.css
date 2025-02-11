@@ -1,0 +1,16 @@
+/* Background Red (Same as `UpcomingShows`) */
+.background {
+    background-color: #e63946; /* ✅ Match red background */
+    padding: 40px 0; /* ✅ Reduces top padding */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensure Parallax Images Are Centered */
+  .parallaxContainer {
+    width: 90%;
+    max-width: 1200px;
+  }
+  

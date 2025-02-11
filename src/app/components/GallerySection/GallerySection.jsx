@@ -1,5 +1,8 @@
 "use client";
 import ParallaxScroll from "@/app/ui/parallax-scroll";
+import { BackgroundBeamsWithCollision } from "@/app/ui/background-beams-with-collision";
+
+
 
 const baseImages = [
   "https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&auto=format&fit=crop&w=3387&q=80",
@@ -10,11 +13,17 @@ const baseImages = [
   "https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2640&q=80",
 ];
 
-// Repeat images 2 more times for a seamless effect
+// Repeat images for seamless scrolling
 const images = [...baseImages, ...baseImages, ...baseImages];
 
 const GallerySection = () => {
-  return <ParallaxScroll images={images} />;
+  return (
+    <BackgroundBeamsWithCollision>
+      <div className="w-full py-10">
+        <ParallaxScroll images={images} />
+      </div>
+    </BackgroundBeamsWithCollision>
+  );
 };
 
 export default GallerySection;

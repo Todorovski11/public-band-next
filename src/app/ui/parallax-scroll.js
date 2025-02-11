@@ -9,15 +9,15 @@ import { twMerge } from "tailwind-merge";
 const cn = (...inputs) => twMerge(clsx(inputs));
 
 const ParallaxScroll = ({ images, className }) => {
-  const gridRef = useRef(null);
+  const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    container: gridRef,
-    offset: ["start start", "end start"],
+    container: scrollRef,
+    offset: ["start start", "end start"], // ✅ Fix scroll behavior
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const translateFirst = useTransform(scrollYProgress, [0, 1], ["0px", "-100px"]); // ✅ Reduced movement
+  const translateSecond = useTransform(scrollYProgress, [0, 1], ["0px", "100px"]);
+  const translateThird = useTransform(scrollYProgress, [0, 1], ["0px", "-100px"]);
 
   const third = Math.ceil(images.length / 3);
   const firstPart = images.slice(0, third);
@@ -25,44 +25,52 @@ const ParallaxScroll = ({ images, className }) => {
   const thirdPart = images.slice(2 * third);
 
   return (
-    <div className={cn("h-[50rem] items-start overflow-y-auto w-full", className)} ref={gridRef}>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-12 py-60 px-12">
-        <div className="grid gap-12">
+    <div
+      className={cn("w-full flex justify-center items-start")}
+      style={{
+        height: "500px", // ✅ Shows only the first row
+        overflowY: "auto", // ✅ Enable scrolling
+        paddingTop: "20px", // ✅ Ensures the first row is visible
+      }}
+      ref={scrollRef}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-8 px-8">
+        <div className="grid gap-8">
           {firstPart.map((el, idx) => (
-            <motion.div style={{ y: translateFirst }} key={`grid-1-${idx}`}>
+            <motion.div key={`grid-1-${idx}`} style={{ y: translateFirst }}>
               <Image
                 src={el}
-                className="h-96 w-full object-cover rounded-xl"
-                height={500}
-                width={500}
+                className="h-64 w-full object-cover rounded-lg"
+                height={300}
+                width={400}
                 alt="gallery image"
                 priority
               />
             </motion.div>
           ))}
         </div>
-        <div className="grid gap-12">
+        <div className="grid gap-8">
           {secondPart.map((el, idx) => (
-            <motion.div style={{ y: translateSecond }} key={`grid-2-${idx}`}>
+            <motion.div key={`grid-2-${idx}`} style={{ y: translateSecond }}>
               <Image
                 src={el}
-                className="h-96 w-full object-cover rounded-xl"
-                height={500}
-                width={500}
+                className="h-64 w-full object-cover rounded-lg"
+                height={300}
+                width={400}
                 alt="gallery image"
                 priority
               />
             </motion.div>
           ))}
         </div>
-        <div className="grid gap-12">
+        <div className="grid gap-8">
           {thirdPart.map((el, idx) => (
-            <motion.div style={{ y: translateThird }} key={`grid-3-${idx}`}>
+            <motion.div key={`grid-3-${idx}`} style={{ y: translateThird }}>
               <Image
                 src={el}
-                className="h-96 w-full object-cover rounded-xl"
-                height={500}
-                width={500}
+                className="h-64 w-full object-cover rounded-lg"
+                height={300}
+                width={400}
                 alt="gallery image"
                 priority
               />
