@@ -4,7 +4,7 @@ import classes from "./MeetTheTeam.module.css";
 const MeetTheTeam = () => {
   const teamMembers = [
     { name: "Mathew Hyatt", role: "Vocal, guitar" },
-    { name: "Jessika Turcotte", role: "Vocal, piano" },
+    { name: "Aco Pedero", role: "Vocal, piano" },
     { name: "Toby Halvorson", role: "Bass guitar" },
     { name: "Anna Mayer", role: "Drums" },
   ];

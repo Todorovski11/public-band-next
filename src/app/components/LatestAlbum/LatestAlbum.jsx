@@ -6,14 +6,15 @@ import classes from "./LatestAlbum.module.css";
 const LatestAlbum = () => {
   return (
     <div className={classes.wrapper}>
+      <div className={classes.overlay}></div> {/* ✅ Background Overlay */}
       <Card className={classes.albumCard} shadow="sm" radius="md">
         <div className={classes.albumInfo}>
           <Image src="/assets/heroImage.jpg" alt="Album Cover" className={classes.albumImage} />
           <div className={classes.textContainer}>
             <Text className={classes.albumTitle}>
-              <strong>Latest</strong> Album
+              <strong>Најновиот сигнл на </strong> Александар
             </Text>
-            <Text className={classes.albumDescription}>Lorem ipsum dolor sit amet</Text>
+            <Text className={classes.albumDescription}>Новата песна на господин АЦО</Text>
           </div>
         </div>
 

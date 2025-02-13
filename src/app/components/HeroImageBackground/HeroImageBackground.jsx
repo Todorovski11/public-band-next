@@ -66,32 +66,17 @@ export function HeroImageBackground() {
             className="text-center"
           >
             <h1 className="text-7xl font-bold mb-6 text-white">
-              Welcome to{" "}
+              Добредојдовте на страната на{" "}
               <span className="text-[#d73756] inline-block mt-2">
                 Public Band
               </span>
             </h1>
 
             <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-              Discover amazing music, connect with fans, and explore new sounds.
+              Резервирајте ја вашата најдобра забава до сега со нашиот бенд.
             </p>
 
             <div className="flex justify-center gap-6">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-opacity-90 transition-all"
-              >
-                Join Now
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#d73756] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-opacity-90 transition-all border-2 border-white"
-              >
-                Listen Live
-              </motion.button>
             </div>
           </motion.div>
         </LampEffect>
@@ -101,11 +86,10 @@ export function HeroImageBackground() {
       <AnotherWavy className="pb-24">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-white">
-            New Album Out Now
+            Најновиот сингл на Јана
           </h2>
           <p className="text-white/80 mb-8">
-            Experience the raw energy of our latest studio recording. Available
-            on all platforms.
+            Слушнете ја новата песна на Јана, нашиот најдобар вокал во бендот.
           </p>
 
           <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
@@ -120,11 +104,10 @@ export function HeroImageBackground() {
       <div className="relative py-24 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-3xl font-bold mb-6 text-white">
-            Join the Revolution
+            Резервирајте го бендот сега
           </h3>
           <p className="text-white/80 mb-8 max-w-xl mx-auto">
-            Get exclusive updates, early access to tickets, and band news
-            straight to your inbox.
+            Испатете го вашиот маил до нашиот бенд, и ќе ве контактираме.
           </p>
 
           <div className="flex justify-center gap-4">
@@ -134,7 +117,7 @@ export function HeroImageBackground() {
               glowColor="#d73756"
             />
             <button className="bg-[#d73756] text-white px-6 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all">
-              Subscribe
+              Send
             </button>
           </div>
         </div>

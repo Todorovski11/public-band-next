@@ -7,9 +7,9 @@ const events = [
   {
     date: "09",
     month: "Feb",
-    title: "Live Show",
-    description: "Live show and albums signing",
-    location: "Los Angeles, USA",
+    title: "Astra kazino",
+    description: "Da mi piesh od chesmicevo",
+    location: "Kichevo, NMK",
     time: "11:45 PM",
     image: "/assets/heroImage.jpg",
   },
