@@ -103,3 +103,10 @@
   background: white;
   color: black;
 }
+
+/* ✅ Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .wrapper {
+    display: none !important; /* ✅ Completely hides the entire component on mobile */
+  }
+}

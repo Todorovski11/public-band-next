@@ -1,3 +1,4 @@
+/* Default Styling (Desktop) */
 .wrapper {
   width: 100%;
   padding: 80px 0;
@@ -19,6 +20,7 @@
   gap: 40px;
 }
 
+/* Cards remain staggered on larger screens */
 .teamCard {
   position: relative;
   width: 300px;
@@ -29,7 +31,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Staggered effect */
 .teamCard:nth-child(odd) {
   transform: translateY(-20px);
 }
@@ -71,4 +72,31 @@
 
 .role {
   font-size: 16px;
+}
+
+/* ✅ Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .teamContainer {
+    flex-direction: column; /* ✅ Stack team members vertically */
+    gap: 20px; /* ✅ Reduce gap between team members */
+  }
+
+  .teamCard {
+    width: 90%; /* ✅ Make cards full-width */
+    height: 380px; /* ✅ Slightly reduce height for better fit */
+    transform: none !important; /* ✅ Remove staggered effect */
+  }
+
+  .teamInfo {
+    text-align: center; /* ✅ Center text inside the card */
+    padding: 10px;
+  }
+
+  .name {
+    font-size: 18px; /* ✅ Reduce text size */
+  }
+
+  .role {
+    font-size: 14px; /* ✅ Reduce text size */
+  }
 }
