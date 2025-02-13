@@ -1,4 +1,5 @@
-import HeroImageBackground from "./components/HeroImageBackground/HeroImageBackground"; // ✅ Ensure correct import
+import { HeroImageBackground } from "./components/HeroImageBackground/HeroImageBackground";
+
 
 import LatestAlbum from "./components/LatestAlbum/LatestAlbum";
 import UpcomingShows from "./components/UpcomingShows/UpcomingShows";
