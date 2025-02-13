@@ -19,33 +19,6 @@ const FooterSection = () => {
             <IconBrandTwitter size={24} />
           </div>
         </div>
-
-        <div className={classes.links}>
-          <div>
-            <h4>Main</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Bio</a></li>
-              <li><a href="#">Music</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="#">Book Now</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Other</h4>
-            <ul>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">FAQ’s</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Return Policy</a></li>
-              <li><a href="#">404 Error</a></li>
-            </ul>
-          </div>
-        </div>
-
         <div className={classes.logo}>
           <h2>🎧 ECSTASY</h2>
         </div>

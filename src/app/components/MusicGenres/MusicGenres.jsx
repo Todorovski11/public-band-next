@@ -1,5 +1,6 @@
 "use client";
 import { Button, Text } from "@mantine/core";
+import { WavyBackground } from "@/app/ui/wavy-background";
 import classes from "./MusicGenres.module.css";
 
 const MusicGenres = () => {
@@ -11,23 +12,22 @@ const MusicGenres = () => {
 
   return (
     <div className={classes.wrapper}>
-      <h2 className={classes.title}>Music</h2>
-      <div className={classes.genreContainer}>
-        {genres.map((genre, index) => (
-          <div key={index} className={classes.genreCard}>
-            <img src={genre.img} alt={genre.title} className={classes.genreImage} />
-            <Text className={classes.genreTitle}>
-              <strong>{genre.title}</strong>
-            </Text>
-            <Text className={classes.genreDescription}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
+      <WavyBackground className={classes.wavyOverlay}>
+        <div className={classes.content}>
+          <h2 className={classes.title}>Music Genres</h2>
+          <div className={classes.genreContainer}>
+            {genres.map((genre, index) => (
+              <div key={index} className={classes.genreCard}>
+                <img src={genre.img} alt={genre.title} className={classes.genreImage} />
+                <Text className={classes.genreTitle}><strong>{genre.title}</strong></Text>
+                <Text className={classes.genreDescription}>
+                  Discover the best {genre.title} music and artists.
+                </Text>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <Button variant="outline" className={classes.listenButton}>
-        Listen to Music
-      </Button>
+        </div>
+      </WavyBackground>
     </div>
   );
 };

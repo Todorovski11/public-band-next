@@ -1,66 +1,99 @@
+/* Wrapper now takes full height to remove white space */
 .wrapper {
   width: 100%;
-  padding: 80px 0;
-  background: #111;
+  height: 60vh; /* Ensures full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  overflow: hidden;
+  background-color: transparent;
+  position: relative;
 }
 
-.title {
-  font-size: 36px;
-  font-weight: 700;
+/* Ensures the wavy background fully covers the section */
+.wavyOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Content is centered inside the wave */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   color: white;
-  margin-bottom: 40px;
+  min-height: 100%;
 }
 
+/* Ensures genre container is centered */
 .genreContainer {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
 }
 
+/* Genre card styling */
 .genreCard {
-  width: 300px;
-  height: 380px;
+  width: 250px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
+/* Circle images with proper sizing */
 .genreImage {
-  width: 250px;
-  height: 250px;
+  width: 200px; 
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid white;
+  border: 4px solid white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
 .genreImage:hover {
   transform: scale(1.1);
   box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
 }
 
+/* Genre title */
 .genreTitle {
   font-size: 22px;
   color: white;
   margin-top: 15px;
 }
 
+/* Genre description */
 .genreDescription {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 8px;
-  max-width: 280px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 250px;
 }
 
+/* Button styling */
 .listenButton {
   margin-top: 40px;
   border: 2px solid white;
   color: white;
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 18px;
   border-radius: 30px;
   transition: 0.3s;
