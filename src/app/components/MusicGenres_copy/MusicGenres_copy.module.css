@@ -1,0 +1,59 @@
+/* Hide section on desktop and tablets */
+@media (min-width: 768px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+/* Wrapper only visible on mobile */
+@media (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    height: auto; /* Adjusts height dynamically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    background: black; /* ✅ Changed from grey to black */
+
+    position: relative;
+    padding: 40px 20px;
+  }
+
+  .genreContainer {
+    flex-direction: column; /* Stack genres vertically */
+    gap: 20px;
+  }
+
+  .genreCard {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .genreImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+  }
+
+  .genreTitle {
+    font-size: 18px;
+    margin-top: 10px;
+    color: white; /* Optional: Make text readable */
+  }
+
+  .genreDescription {
+    font-size: 14px;
+    max-width: 250px;
+    color: white; /* Optional: Make text readable */
+  }
+}

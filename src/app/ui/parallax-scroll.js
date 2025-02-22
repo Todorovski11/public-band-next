@@ -40,7 +40,7 @@ const ParallaxScroll = ({ images, className }) => {
             <motion.div key={`grid-1-${idx}`} style={{ y: translateFirst }}>
               <Image
                 src={el}
-                className="h-64 w-full object-cover rounded-lg"
+                className="h-auto w-full object-contain rounded-lg" // ✅ Prevents cropping
                 height={300}
                 width={400}
                 alt="gallery image"
@@ -54,7 +54,7 @@ const ParallaxScroll = ({ images, className }) => {
             <motion.div key={`grid-2-${idx}`} style={{ y: translateSecond }}>
               <Image
                 src={el}
-                className="h-64 w-full object-cover rounded-lg"
+                className="h-auto w-full object-contain rounded-lg" // ✅ Prevents cropping
                 height={300}
                 width={400}
                 alt="gallery image"
@@ -68,7 +68,7 @@ const ParallaxScroll = ({ images, className }) => {
             <motion.div key={`grid-3-${idx}`} style={{ y: translateThird }}>
               <Image
                 src={el}
-                className="h-64 w-full object-cover rounded-lg"
+                className="h-auto w-full object-contain rounded-lg" // ✅ Prevents cropping
                 height={300}
                 width={400}
                 alt="gallery image"

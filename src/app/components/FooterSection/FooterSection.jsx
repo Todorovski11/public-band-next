@@ -1,7 +1,9 @@
 "use client";
+import Image from "next/image";
 import { Text } from "@mantine/core";
 import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube, IconBrandTwitter } from "@tabler/icons-react";
 import classes from "./FooterSection.module.css";
+import logo from "../../../../public/assets/logo.png"; // Import your logo
 
 const FooterSection = () => {
   return (
@@ -20,7 +22,7 @@ const FooterSection = () => {
           </div>
         </div>
         <div className={classes.logo}>
-          <h2>🎧 ECSTASY</h2>
+          <Image src={logo} alt="Ecstasy Logo" width={120} height={50} priority />
         </div>
       </div>
 

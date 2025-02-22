@@ -4,7 +4,7 @@ import classes from "./EventPromotionSection.module.css";
 
 const EventPromotionSection = () => {
   return (
-    <div className={classes.wrapper} style={{ backgroundImage: `url('/assets/heroImage.jpg')` }}>
+    <div className={classes.wrapper} style={{ backgroundImage: `url('/assets/public.jpg')` }}>
       <div className={classes.content}>
         <h2 className={classes.title}>
           Liven up <br /> Your Event!

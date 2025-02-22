@@ -24,17 +24,7 @@ const LatestAlbum = () => {
           </Button>
         </div>
 
-        <Group className={classes.stats}>
-          <Text className={classes.statItem}>
-            <IconThumbUp size={16} /> 32,870
-          </Text>
-          <Text className={classes.statItem}>
-            <IconHeadphones size={16} /> 45,350
-          </Text>
-          <Text className={classes.statItem}>
-            <IconShare size={16} /> 20,530
-          </Text>
-        </Group>
+
       </Card>
     </div>
   );

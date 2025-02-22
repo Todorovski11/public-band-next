@@ -5,16 +5,16 @@ import classes from "./MusicGenres.module.css";
 
 const MusicGenres = () => {
   const genres = [
-    { title: "Hip Hop", img: "/assets/heroImage.jpg" },
-    { title: "Rock", img: "/assets/heroImage.jpg" },
-    { title: "Classic", img: "/assets/heroImage.jpg" },
+    { title: "Intrernational Hits", img: "/assets/heroImage.jpg" },
+    { title: "Mak Hits", img: "/assets/heroImage.jpg" },
+    { title: "Ex-yu", img: "/assets/heroImage.jpg" },
   ];
 
   return (
     <div className={classes.wrapper}>
       <WavyBackground className={classes.wavyOverlay}>
         <div className={classes.content}>
-          <h2 className={classes.title}>Music Genres</h2>
+          <h1 className={classes.title}>Music Genres</h1>
           <div className={classes.genreContainer}>
             {genres.map((genre, index) => (
               <div key={index} className={classes.genreCard}>
