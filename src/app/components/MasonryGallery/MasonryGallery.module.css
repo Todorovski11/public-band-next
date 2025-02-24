@@ -1,0 +1,20 @@
+/* MasonryGallery.module.css */
+  .masonry {
+    column-count: 6;
+    column-gap: 15px;
+    background-color: black ; /* Ensure the masonry section is also colored */
+    padding: 20px;
+  }
+  
+  .masonryItem {
+    break-inside: avoid;
+    margin-bottom: 10px;
+  }
+  
+  .image {
+    width: 100%;
+    max-width: 100%; /* Ensures full width within the masonry grid */
+    display: block;
+    border-radius: 5px; /* Optional: rounded corners */
+  }
+  

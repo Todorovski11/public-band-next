@@ -8,12 +8,15 @@ import MeetTheTeam from "./components/MeetTheTeam/MeetTheTeam";
 import EventPromotionSection from "./components/EventPromotionSection/EventPromotionSection";
 import FooterSection from "./components/FooterSection/FooterSection";
 import MobileGalleryWrapper from "./components/MobileGalleryWrapper"; // ✅ Use wrapper
+import MasonryGallery from "./components/MasonryGallery/MasonryGallery"
+import { ExpandableCardDemo } from "./components/ExpandableCardDemo/ExpandableCardDemo";
+
 
 function Home() {
   return (
     <>
       <HeroImageBackground />
-      <LatestAlbum />
+      <ExpandableCardDemo />
       <UpcomingShows />
       <MeetTheTeam />
 
