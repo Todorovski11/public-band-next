@@ -1,9 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOutsideClick } from "@/app/hooks/use-outside-click"; // Import the custom hook
+import { useOutsideClick } from "@/hooks/use-outside-click";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState(null);
@@ -13,11 +12,11 @@ export function ExpandableCardDemo() {
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === "Escape") {
-        setActive(null);
+        setActive(false);
       }
     }
 
-    if (active) {
+    if (active && typeof active === "object") {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -32,7 +31,7 @@ export function ExpandableCardDemo() {
   return (
     <>
       <AnimatePresence>
-        {active && (
+        {active && typeof active === "object" && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -41,7 +40,6 @@ export function ExpandableCardDemo() {
           />
         )}
       </AnimatePresence>
-
       <AnimatePresence>
         {active && typeof active === "object" ? (
           <div className="fixed inset-0  grid place-items-center z-[100]">
@@ -125,14 +123,13 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-
-      <ul className="max-w-4xl mx-auto w-full gap-4">
+      <ul className="max-w-2xl mx-auto w-full gap-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 my-5 flex bg-neutral-800 flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-500 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -172,27 +169,38 @@ export function ExpandableCardDemo() {
   );
 }
 
-export const CloseIcon = () => (
-  <motion.svg
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0, transition: { duration: 0.05 } }}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-4 w-4 text-black"
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M18 6l-12 12" />
-    <path d="M6 6l12 12" />
-  </motion.svg>
-);
+export const CloseIcon = () => {
+  return (
+    <motion.svg
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+        transition: {
+          duration: 0.05,
+        },
+      }}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4 text-black"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 6l-12 12" />
+      <path d="M6 6l12 12" />
+    </motion.svg>
+  );
+};
 
 const cards = [
   {

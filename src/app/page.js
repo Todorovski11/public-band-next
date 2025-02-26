@@ -8,15 +8,18 @@ import MeetTheTeam from "./components/MeetTheTeam/MeetTheTeam";
 import EventPromotionSection from "./components/EventPromotionSection/EventPromotionSection";
 import FooterSection from "./components/FooterSection/FooterSection";
 import MobileGalleryWrapper from "./components/MobileGalleryWrapper"; // ✅ Use wrapper
-import MasonryGallery from "./components/MasonryGallery/MasonryGallery"
+import MasonryGallery from "./components/MasonryGallery/MasonryGallery";
 import { ExpandableCardDemo } from "./components/ExpandableCardDemo/ExpandableCardDemo";
-
 
 function Home() {
   return (
-    <>
+    <div className="bg-[#111]">
       <HeroImageBackground />
-      <ExpandableCardDemo />
+
+      <div className="bg-[#111]">
+        <ExpandableCardDemo />
+      </div>
+
       <UpcomingShows />
       <MeetTheTeam />
 
@@ -42,7 +45,7 @@ function Home() {
 
       <EventPromotionSection />
       <FooterSection />
-    </>
+    </div>
   );
 }
 

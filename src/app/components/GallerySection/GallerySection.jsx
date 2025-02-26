@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import ParallaxScroll from "@/app/ui/parallax-scroll";
 import { BackgroundBeamsWithCollision } from "@/app/ui/background-beams-with-collision";
 
@@ -26,13 +27,56 @@ import img20 from "../../../../public/assets/Gallery_photos/20.png";
 import img21 from "../../../../public/assets/Gallery_photos/21.png";
 
 const baseImages = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9,
-  img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
 ];
 
-// Function to shuffle and distribute images evenly
+// Deterministic shuffle with a fixed seed
+function seededShuffle(array, seed = 42) {
+  const shuffled = [...array];
+  let currentIndex = shuffled.length;
+  let pseudoRandom = seed;
+
+  // Simple deterministic random number generator
+  const random = () => {
+    pseudoRandom = (pseudoRandom * 9301 + 49297) % 233280;
+    return pseudoRandom / 233280;
+  };
+
+  while (currentIndex > 0) {
+    const randomIndex = Math.floor(random() * currentIndex);
+    currentIndex--;
+    [shuffled[currentIndex], shuffled[randomIndex]] = [
+      shuffled[randomIndex],
+      shuffled[currentIndex],
+    ];
+  }
+
+  return shuffled;
+}
+
+// Function to distribute images evenly with deterministic shuffling
 const distributeImages = (images) => {
-  const shuffled = [...images].sort(() => Math.random() - 0.5);
+  const shuffled = seededShuffle(images);
   const third = Math.ceil(shuffled.length / 3);
 
   return {
@@ -44,12 +88,13 @@ const distributeImages = (images) => {
 
 // Distribute images
 const { firstPart, secondPart, thirdPart } = distributeImages(baseImages);
+const distributedImages = [...firstPart, ...secondPart, ...thirdPart];
 
 const GallerySection = () => {
   return (
     <BackgroundBeamsWithCollision>
       <div className="w-full py-10">
-        <ParallaxScroll images={[...firstPart, ...secondPart, ...thirdPart]} />
+        <ParallaxScroll images={distributedImages} />
       </div>
     </BackgroundBeamsWithCollision>
   );
