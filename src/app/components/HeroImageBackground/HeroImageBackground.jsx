@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandYoutube,
-  IconBrandTwitter,
+  // IconBrandYoutube,
+  // IconBrandTwitter,
 } from "@tabler/icons-react";
 import { AnotherWavy } from "@/app/ui/another-wavy"; // ✅ Ensure these exist
 import { AnimatedShinyInput } from "@/app/ui/animated-shiny-input";
@@ -22,20 +22,29 @@ export function HeroImageBackground() {
 
       {/* Social Icons (Left Side) */}
       <motion.div
-        className="absolute left-6 md:fixed top-1/2 -translate-y-1/2 flex flex-col gap-6 z-30"
+        className="absolute md:fixed top-1/2 -translate-y-1/2 flex flex-col gap-6 z-30"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {[IconBrandFacebook, IconBrandInstagram, IconBrandYoutube, IconBrandTwitter].map((Icon, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ scale: 1.2, color: "#d73756" }}
-            className="text-white cursor-pointer"
-          >
-            <Icon size={32} />
-          </motion.div>
-        ))}
+{[
+  { icon: IconBrandFacebook, link: "https://www.facebook.com/profile.php?id=61568452600040" },
+  { icon: IconBrandInstagram, link: "https://www.instagram.com/public__band/" },
+  // { icon: IconBrandYoutube, link: "https://youtube.com/@publicband" },
+  // { icon: IconBrandTwitter, link: "https://twitter.com/publicband" },
+].map(({ icon: Icon, link }, idx) => (
+  <motion.a
+    key={idx}
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.2, color: "#d73756" }}
+    className="text-white cursor-pointer"
+  >
+    <Icon size={32} />
+  </motion.a>
+))}
+
       </motion.div>
 
       {/* Main Content */}

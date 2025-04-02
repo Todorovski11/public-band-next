@@ -9,7 +9,7 @@ const FooterSection = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
-        <div className={classes.about}>
+        {/* <div className={classes.about}>
           <h3>About the Ecstasy</h3>
           <Text className={classes.description}>
             Nunc tempus est a dolor cursus pharetra. Donec a massa orci. Nullam eget ante id diam blandit accumsan.
@@ -20,14 +20,14 @@ const FooterSection = () => {
             <IconBrandYoutube size={24} />
             <IconBrandTwitter size={24} />
           </div>
-        </div>
-        <div className={classes.logo}>
+        </div> */}
+        {/* <div className={classes.logo}>
           <Image src={logo} alt="Ecstasy Logo" width={120} height={50} priority />
-        </div>
+        </div> */}
       </div>
 
       <Text className={classes.copyright}>
-        Copyrights © 2024 - All rights reserved. Design by <a href="#">Lucrative Studio</a>.
+        Copyrights © 2025 - All rights reserved. Design by <a href="#">Martin Todorovski</a>.
       </Text>
     </footer>
   );
