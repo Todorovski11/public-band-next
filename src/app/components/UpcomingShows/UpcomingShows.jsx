@@ -5,23 +5,23 @@ import styles from "./UpcomingShows.module.css";
 
 const events = [
   {
-    date: "22",
-    month: "Feb",
+    date: "05",
+    month: "April",
     title: "Aurum - Partizanska",
     description: "Reservation info: 076-337-779",
     location: "Bitola, NMK",
-    time: "22:00 PM",
+    time: "21:00 PM",
     image: "/assets/aurum.jpg",
   },
-  {
-    date: "01",
-    month: "Mar",
-    title: "BLVD 23",
-    description: "Reservation info: 076-337-779",
-    location: "Gostivar, MK",
-    time: "09:30 PM",
-    image: "/assets/blvd.png",
-  },
+  // {
+  //   date: "01",
+  //   month: "Mar",
+  //   title: "BLVD 23",
+  //   description: "Reservation info: 076-337-779",
+  //   location: "Gostivar, MK",
+  //   time: "09:30 PM",
+  //   image: "/assets/blvd.png",
+  // },
 ];
 
 const UpcomingShows = () => {

@@ -1,7 +1,12 @@
 "use client";
 import Image from "next/image";
 import { Text } from "@mantine/core";
-import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube, IconBrandTwitter } from "@tabler/icons-react";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandYoutube,
+  IconBrandTwitter,
+} from "@tabler/icons-react";
 import classes from "./FooterSection.module.css";
 import logo from "../../../../public/assets/logo.png"; // Import your logo
 
@@ -10,13 +15,27 @@ const FooterSection = () => {
     <footer className={classes.footer}>
       <div className={classes.container}>
         <div className={classes.about}>
-          <h3>About the Ecstasy</h3>
+          <h3>About the Public band</h3>
           <Text className={classes.description}>
-            Nunc tempus est a dolor cursus pharetra. Donec a massa orci. Nullam eget ante id diam blandit accumsan.
+            Prepare yourself for an unforgettable night of music, rhythm, and pure adrenaline.
+            When Public Band takes the stage, every beat, every melody, and every moment comes alive.
+            This isn't just a concert — it's the soundtrack to the best night of your life.
           </Text>
           <div className={classes.socials}>
-            <IconBrandFacebook size={24} />
-            <IconBrandInstagram size={24} />
+            <a
+              href="https://www.facebook.com/profile.php?id=61568452600040"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconBrandFacebook size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/public__band/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconBrandInstagram size={24} />
+            </a>
             <IconBrandYoutube size={24} />
             <IconBrandTwitter size={24} />
           </div>
@@ -25,10 +44,7 @@ const FooterSection = () => {
           <Image src={logo} alt="Ecstasy Logo" width={120} height={50} priority />
         </div>
       </div>
-
-      <Text className={classes.copyright}>
-        Copyrights © 2024 - All rights reserved. Design by <a href="#">Lucrative Studio</a>.
-      </Text>
+      <Text className={classes.copyright}></Text>
     </footer>
   );
 };

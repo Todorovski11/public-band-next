@@ -4,9 +4,9 @@ import classes from "./MusicGenres_copy.module.css";
 
 const MusicGenres = () => {
   const genres = [
-    { title: "Intrernational Hits", img: "/assets/heroImage.jpg" },
-    { title: "Mak Hits", img: "/assets/heroImage.jpg" },
-    { title: "Ex-yu", img: "/assets/heroImage.jpg" },
+    { title: "Intrernational Hits", img: "/assets/internation_music.jpg" },
+    { title: "Mak Hits", img: "/assets/mkd_hits.png" },
+    { title: "Ex-yu", img: "/assets/ex_yu.jpg" },
   ];
 
   return (

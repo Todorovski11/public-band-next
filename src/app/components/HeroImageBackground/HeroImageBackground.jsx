@@ -10,6 +10,13 @@ import { AnotherWavy } from "@/app/ui/another-wavy"; // ✅ Ensure these exist
 import { AnimatedShinyInput } from "@/app/ui/animated-shiny-input";
 
 export function HeroImageBackground() {
+  const socialIcons = [
+    { Icon: IconBrandFacebook, url: "https://www.facebook.com/profile.php?id=61568452600040" },
+    { Icon: IconBrandInstagram, url: "https://www.instagram.com/public__band/" },
+    { Icon: IconBrandYoutube, url: "#" },
+    { Icon: IconBrandTwitter, url: "#" },
+  ];
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image with Overlay */}
@@ -27,14 +34,17 @@ export function HeroImageBackground() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {[IconBrandFacebook, IconBrandInstagram, IconBrandYoutube, IconBrandTwitter].map((Icon, idx) => (
-          <motion.div
+        {socialIcons.map(({ Icon, url }, idx) => (
+          <motion.a
             key={idx}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.2, color: "#d73756" }}
             className="text-white cursor-pointer"
           >
             <Icon size={32} />
-          </motion.div>
+          </motion.a>
         ))}
       </motion.div>
 
@@ -56,21 +66,50 @@ export function HeroImageBackground() {
       {/* Newsletter Section */}
       <div className="relative py-24">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold mb-6 text-white">Резервирајте го бендот сега</h3>
+          <h3 className="text-3xl font-bold mb-6 text-white">
+            Резервирајте го бендот сега
+          </h3>
           <p className="text-white/80 mb-8 max-w-xl mx-auto">
             Испратете го вашиот маил до нашиот бенд, и ќе ве контактираме.
           </p>
 
-          <div className="flex justify-center gap-4">
-            <AnimatedShinyInput
-              className="max-w-xl"
-              placeholder="Enter your email"
-              glowColor="#d73756"
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="flex flex-col md:flex-row justify-center gap-4 items-center w-full max-w-xl mx-auto"
+          >
+            {/* Hidden Access Key */}
+            <input
+              type="hidden"
+              name="access_key"
+              value="9cd1d015-82dd-4bcd-8bcf-a0709df4fd04"
             />
-            <button className="bg-[#d73756] text-white px-6 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all">
+
+            {/* Email Input */}
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Enter your email"
+              className="w-full px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#d73756] text-black"
+            />
+
+            {/* Hidden Honeypot Field (Spam Protection) */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+            />
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="bg-[#d73756] text-white px-6 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all"
+            >
               Send
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
