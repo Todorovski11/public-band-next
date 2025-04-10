@@ -11,7 +11,7 @@ const events = [
     description: "Reservation info: 02/ 3-117-483",
     location: "Skopje, MK",
     time: "21:00 PM",
-    image: "/assets/aristocrat.jpg",
+    image: "/assets/aristocrat.jpeg",
   },
   {
     date: "12",
@@ -20,7 +20,7 @@ const events = [
     description: "Reservation info: 071-345-160",
     location: "Skopje, MK",
     time: "09:30 PM",
-    image: "/assets/myth.png",
+    image: "/assets/myth.jpeg",
   },
 ];
 
