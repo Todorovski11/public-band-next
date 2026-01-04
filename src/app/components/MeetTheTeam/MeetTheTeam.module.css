@@ -2,7 +2,7 @@
 .wrapper {
   width: 100%;
   padding: 80px 0;
-  background: #111;
+  background: transparent; /* ✅ so it uses the Hero background */
   text-align: center;
 }
 
@@ -16,8 +16,9 @@
 .teamContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 40px;
+  flex-wrap: wrap; /* ✅ prevent overflow on smaller desktop widths */
 }
 
 /* Cards remain staggered on larger screens */
@@ -29,18 +30,27 @@
   border-radius: 12px;
   background: black;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* ✅ Use CSS variables so hover doesn't break the stagger effect */
+.teamCard {
+  --offsetY: 0px;
 }
 
 .teamCard:nth-child(odd) {
-  transform: translateY(-20px);
-}
-.teamCard:nth-child(even) {
-  transform: translateY(20px);
+  --offsetY: -20px;
+  transform: translateY(var(--offsetY));
 }
 
-/* Hover Effect */
+.teamCard:nth-child(even) {
+  --offsetY: 20px;
+  transform: translateY(var(--offsetY));
+}
+
+/* Hover Effect ✅ keeps offset + adds scale */
 .teamCard:hover {
-  transform: scale(1.05);
+  transform: translateY(var(--offsetY)) scale(1.05);
   box-shadow: 0px 10px 20px rgba(255, 0, 76, 0.3);
 }
 
@@ -77,26 +87,35 @@
 /* ✅ Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   .teamContainer {
-    flex-direction: column; /* ✅ Stack team members vertically */
-    gap: 20px; /* ✅ Reduce gap between team members */
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   .teamCard {
-    width: 90%; /* ✅ Make cards full-width */
-    height: 380px; /* ✅ Slightly reduce height for better fit */
-    transform: none !important; /* ✅ Remove staggered effect */
+    width: 90%;
+    max-width: 420px;
+    height: 380px;
+    transform: none !important; /* ✅ remove stagger on mobile */
   }
 
   .teamInfo {
-    text-align: center; /* ✅ Center text inside the card */
+    text-align: center;
     padding: 10px;
   }
 
   .name {
-    font-size: 18px; /* ✅ Reduce text size */
+    font-size: 18px;
   }
 
   .role {
-    font-size: 14px; /* ✅ Reduce text size */
+    font-size: 14px;
+  }
+}
+
+/* ✅ Optional: small desktops / tablets (looks nicer) */
+@media (max-width: 1024px) {
+  .teamContainer {
+    gap: 24px;
   }
 }

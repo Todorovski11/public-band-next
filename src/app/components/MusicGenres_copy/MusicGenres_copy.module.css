@@ -16,7 +16,9 @@
     flex-direction: column;
     text-align: center;
     overflow: hidden;
-    background: black; /* ✅ Changed from grey to black */
+
+    /* ✅ Background removed → transparent */
+    background: transparent;
 
     position: relative;
     padding: 40px 20px;
@@ -48,12 +50,12 @@
   .genreTitle {
     font-size: 18px;
     margin-top: 10px;
-    color: white; /* Optional: Make text readable */
+    color: white;
   }
 
   .genreDescription {
     font-size: 14px;
     max-width: 250px;
-    color: white; /* Optional: Make text readable */
+    color: white;
   }
 }

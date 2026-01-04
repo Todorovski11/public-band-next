@@ -7,7 +7,7 @@ export const WavyBackground = ({
   className,
   colors,
   waveWidth = 10, // Thinner for smoother movement
-  backgroundFill = "#000",
+  backgroundFill = "transparent",
   blur = 10,
   waveOpacity = 1,
   speed = 0.002,
@@ -63,9 +63,12 @@ export const WavyBackground = ({
 
     const render = () => {
       ctx.clearRect(0, 0, w, h);
-      ctx.fillStyle = backgroundFill;
       ctx.globalAlpha = waveOpacity;
-      ctx.fillRect(0, 0, w, h);
+
+      if (backgroundFill && backgroundFill !== "transparent") {
+        ctx.fillStyle = backgroundFill;
+        ctx.fillRect(0, 0, w, h);
+      }
 
       ctx.save();
       ctx.translate(0, h * 0.5);
